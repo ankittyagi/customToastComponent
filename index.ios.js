@@ -12,20 +12,40 @@ import {
   View
 } from 'react-native';
 
+import Map from './Map'
+import Points from './Map/points'
+
 export default class customToastComponent extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+            <View
+        style={{
+          flex: 1
+        }}
+      >
+        <View
+          style={{
+            height: 80,
+            backgroundColor: "red",
+          }}
+        >
+          <Text
+            style={{
+              alignSelf: 'center',
+              textAlign: "center",
+              height: 50,
+              marginTop: 35,
+              color: "white"
+            }}
+          >
+            Example for React Native Map Clusters
+          </Text>
+        </View>
+        <Map
+          {
+            ...{mapPoints: Points}
+          }
+        />
       </View>
     );
   }
